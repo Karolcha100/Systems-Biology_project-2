@@ -1,0 +1,10 @@
+ipykernel
+pandas
+matplotlib
+networkx
+numpy
+scipy
+hdbscan
+scikit-learn
+ImageIO
+imageio[ffmpeg]
