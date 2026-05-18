@@ -10,11 +10,12 @@
 
 #### Table of Contents:
 1. Technical Description.
-    - How to reproduce output?
+    Simply run the neccesary scripts and the notebook cells.
 2. General Description.
     - Short explanation what is the Data, biological context etc.
 3. Task A Description.
-    - How we managed to do `Task A`?
+    - Spatiotemporal analysis executed by using modified existing scripts adn notebooks from the labs and lectures.
+ables
 4. Task B Description.
     - Our struggle with independent research based on Data.
 ---
@@ -24,7 +25,7 @@
 
 #### Where to put data?
 
-> You should paste data as `single-cell-tracks_exp1-6_noErbB2.csv.gz` into the `ROOT/raw_data/` directory.
+> You should paste data such as `single-cell-tracks_exp1-6_noErbB2.csv.gz` into the `/outputs` directory.
 
 #### How to install dependencies?
 
@@ -32,7 +33,7 @@
 
 #### How to run Task A?
 
-> [TODO]
+Simply run the neccesary script - "compare_spatiotemporal_behavior.py" and the notebook cells from top to bottom.
 
 #### How to run Task B?
 
@@ -42,8 +43,7 @@
 
 ```
 ROOT/
-    raw_data/[raw data here]
-    TaskA/[TODO]
+    TaskA/[the provided structure from the assignment pdf]
     TaskB/[TODO]
     Assigment.pdf - Assigment File by Krzysztof Gogolewski.
     README.md - You are reading it right now!
@@ -54,17 +54,19 @@ ROOT/
 
 #### What does Data consist of?
 
-> [TODO]
+Spatiotemporal Data concerning the spread of ERK signal waves.
 
 #### What is the Biological Context?
 
-> [TODO]
+We wish to study how the signal spreads through tissue in real time and how variables such us mutations impact this phenomenon.
 
 ## Task A Description
 
-[TODO]
+Guided analysis modifying existing scripts with clear deliver-
+ables
 
 ## Task B Description
 
-[TODO]
+Independent research: choose structured questions or formulate
+your own
 
