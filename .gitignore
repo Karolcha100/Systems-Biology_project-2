@@ -4,3 +4,7 @@ venv/
 __pycache__/
 .vscode/
 raw_data/
+data/
+scripts/
+analysis_outputs/
+task_outputs/
