@@ -8,3 +8,5 @@ hdbscan
 scikit-learn
 ImageIO
 imageio[ffmpeg]
+pyarrow
+fastparquet
