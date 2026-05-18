@@ -3,4 +3,3 @@ untracked.*
 venv/
 __pycache__/
 .vscode/
-outputs/
