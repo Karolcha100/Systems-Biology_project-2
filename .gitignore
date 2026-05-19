@@ -3,3 +3,4 @@ untracked.*
 venv/
 __pycache__/
 .vscode/
+raw_data/*
