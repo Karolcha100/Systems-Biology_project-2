@@ -5,7 +5,7 @@ import numpy as np
 
 
 
-def plot_hist(ax: Axes, col_name: str, data: np.ndarray) -> None:
+def plot_hist_while_columns(ax: Axes, col_name: str, data: np.ndarray) -> None:
     ax.hist(data, rwidth = 0.8, bins = 1000, alpha = 1)
     ax.set_title(col_name)
     ax.set_xlabel(f"Value")
@@ -24,17 +24,19 @@ def plot_all_columns(df: pd.DataFrame, all_labels: pd.Series|None = None, sel_la
     if all_labels is None and sel_labels is not None:
         raise ValueError(f"[plot_all_columns] {"all_labels"} should be provided when {"sel_labels"} are present!")
 
-    fig, axs = plt.subplots(len(df.columns), len(df.columns), 
-                            figsize=(6*len(df.columns), 6*len(df.columns)))
+    fig, axs = plt.subplots(
+        len(df.columns), len(df.columns), 
+        figsize=(6*len(df.columns), 6*len(df.columns))
+    )
 
     for i, col1 in enumerate(df.columns):
         for j, col2 in enumerate(df.columns):
             if i == j:
                 if sel_labels is not None and all_labels is not None:
                     for sel_lab in sel_labels:
-                        plot_hist(axs[i][j], col1, df.loc[all_labels == sel_lab][col1].to_numpy())                  
+                        plot_hist_while_columns(axs[i][j], col1, df.loc[all_labels == sel_lab][col1].to_numpy())                  
                 else:
-                    plot_hist(axs[i][j], col1, df[col1].to_numpy())
+                    plot_hist_while_columns(axs[i][j], col1, df[col1].to_numpy())
             else:
                 if sel_labels is not None and all_labels is not None:
                     for sel_lab in sel_labels:
@@ -55,6 +57,35 @@ def plot_all_columns(df: pd.DataFrame, all_labels: pd.Series|None = None, sel_la
                     col2_data=df[col2].to_numpy(),
                     alpha=0.005
                 )
+
+
+    fig.tight_layout()
+
+    if save_path is not None:
+        fig.savefig(save_path)
+
+
+
+
+
+
+def plot_hist(df: pd.DataFrame, labels_selected: list[int]|None=None, save_path: str|None = None) -> None:
+    selected_columns = [col for col in df.columns if col not in {"label"}]
+
+    fig, axs = plt.subplots(len(selected_columns), figsize = (10, 3 * len(df.columns)))
+
+    for i, col in enumerate(selected_columns):
+        
+        if labels_selected is not None:
+            for lab_idx in labels_selected:
+                axs[i].hist(df[df["label"] == lab_idx][col], rwidth = 0.8, bins = 100, alpha = 0.5, label = f"lab = {lab_idx}")
+        else:
+            axs[i].hist(df[col], rwidth = 0.8, bins = 1000, alpha = 1)
+        axs[i].set_title(col)
+        axs[i].legend(fontsize=10)
+        axs[i].set_xlabel(f"ERK ratio value")
+        axs[i].set_ylabel(f"Count")
+
 
 
     fig.tight_layout()
