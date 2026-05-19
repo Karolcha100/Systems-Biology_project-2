@@ -33,11 +33,11 @@ ables
 
 #### How to run Task A?
 
-Simply run the neccesary script - "compare_spatiotemporal_behavior.py" and the notebook cells from top to bottom.
+> Simply run the neccesary script - "compare_spatiotemporal_behavior.py" and the notebook cells from top to bottom.
 
 #### How to run Task B?
 
-> [TODO]
+> Run the notebooks.
 
 #### Project Structure
 
@@ -48,6 +48,7 @@ ROOT/
     Assigment.pdf - Assigment File by Krzysztof Gogolewski.
     README.md - You are reading it right now!
     requirements.txt - requirements in python for project to run.
+    Report.pdf - Report for Krzysztof Googolewski
 ```
 
 ## General Description
